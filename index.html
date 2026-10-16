@@ -1,452 +1,435 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth dark">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hemal Jindal | Finance Major at Rutgers Business School</title>
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                extend: {
-                    colors: {
-                        scarlet: {
-                            50: '#fff1f2',
-                            100: '#ffe4e6',
-                            500: '#f43f5e',
-                            600: '#CC0033', // Rutgers Scarlet
-                            700: '#be123c',
-                            800: '#9f1239',
-                            900: '#881337',
-                        },
-                        navy: {
-                            800: '#0f172a',
-                            900: '#0b0f19',
-                            950: '#05070c'
-                        }
-                    },
-                    fontFamily: {
-                        sans: ['Plus Jakarta Sans', 'Inter', 'sans-serif'],
-                    }
-                }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hemal Jindal | Finance Major - Rutgers Business School</title>
+  
+  <!-- Google Fonts & Tailwind CSS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            rutgers: {
+              red: '#CC0033',
+              darkRed: '#990022',
+              gray: '#5F6062',
+              black: '#000000'
             }
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace']
+          }
         }
-    </script>
-    <!-- FontAwesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-        }
-        /* Custom scrollbar */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #0b0f19;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #334155;
-            border-radius: 4px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #CC0033;
-        }
-        .scarlet-glow {
-            box-shadow: 0 0 30px -5px rgba(204, 0, 51, 0.25);
-        }
-    </style>
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      scroll-behavior: smooth;
+    }
+    .glass-card {
+      background: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(229, 231, 235, 0.8);
+    }
+    .dark .glass-card {
+      background: rgba(24, 24, 27, 0.75);
+      border: 1px solid rgba(63, 63, 70, 0.5);
+    }
+    .badge-glow {
+      box-shadow: 0 0 15px rgba(204, 0, 51, 0.2);
+    }
+  </style>
 </head>
-<body class="bg-slate-50 text-slate-800 dark:bg-navy-950 dark:text-slate-100 transition-colors duration-300 min-h-screen flex flex-col justify-between selection:bg-scarlet-600 selection:text-white">
+<body class="bg-gray-50 dark:bg-zinc-950 text-gray-900 dark:text-zinc-100 transition-colors duration-300 min-h-screen flex flex-col justify-between">
 
-    <!-- Toast Notification -->
-    <div id="toast" class="fixed bottom-5 right-5 z-50 transform translate-y-20 opacity-0 transition-all duration-300 bg-emerald-600 text-white px-6 py-4 rounded-xl shadow-2xl flex items-center space-x-3 pointer-events-none">
-        <i class="fa-solid fa-circle-check text-xl"></i>
-        <span id="toast-message">Action successful!</span>
+  <!-- NAVIGATION -->
+  <header class="sticky top-0 z-50 backdrop-blur-md bg-white/80 dark:bg-zinc-950/80 border-b border-gray-200 dark:border-zinc-800">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <div class="flex items-center space-x-3">
+        <div class="w-9 h-9 rounded-lg bg-rutgers-red flex items-center justify-center text-white font-bold text-xl tracking-wider shadow-md">
+          HJ
+        </div>
+        <span class="font-bold text-lg tracking-tight">Hemal Jindal</span>
+      </div>
+
+      <nav class="hidden md:flex items-center space-x-6 text-sm font-medium">
+        <a href="#about" class="hover:text-rutgers-red transition-colors">About</a>
+        <a href="#skills" class="hover:text-rutgers-red transition-colors">Skills</a>
+        <a href="#rbs" class="hover:text-rutgers-red transition-colors">Rutgers Spotlight</a>
+        <a href="#projects" class="hover:text-rutgers-red transition-colors">Projects & Research</a>
+      </nav>
+
+      <div class="flex items-center space-x-3">
+        <button id="themeToggle" class="p-2 rounded-lg bg-gray-100 dark:bg-zinc-800 text-gray-600 dark:text-zinc-300 hover:text-rutgers-red transition-colors" aria-label="Toggle Theme">
+          <i data-lucide="moon" class="w-5 h-5 dark:hidden"></i>
+          <i data-lucide="sun" class="w-5 h-5 hidden dark:block"></i>
+        </button>
+        <a href="mailto:hemal.jindal@rutgers.edu" class="px-4 py-2 text-sm font-medium text-white bg-rutgers-red hover:bg-rutgers-darkRed rounded-lg transition-colors shadow-sm flex items-center space-x-2">
+          <i data-lucide="mail" class="w-4 h-4"></i>
+          <span>Get in Touch</span>
+        </a>
+      </div>
     </div>
+  </header>
 
-    <!-- Header / Navigation -->
-    <header class="sticky top-0 z-40 w-full backdrop-blur-md bg-white/80 dark:bg-navy-900/80 border-b border-slate-200 dark:border-slate-800/80 transition-colors">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-            <!-- Brand Logo -->
-            <a href="#home" class="flex items-center space-x-3 group">
-                <div class="w-10 h-10 rounded-xl bg-scarlet-600 flex items-center justify-center text-white font-bold text-xl shadow-md shadow-scarlet-600/30 group-hover:scale-105 transition-transform">
-                    HJ
-                </div>
-                <div class="flex flex-col">
-                    <span class="font-bold text-lg tracking-tight text-slate-900 dark:text-white">Hemal Jindal</span>
-                    <span class="text-xs text-scarlet-600 font-semibold tracking-wide">Rutgers Business School</span>
-                </div>
+  <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-16">
+
+    <!-- HERO SECTION -->
+    <section id="about" class="pt-6 pb-2">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-8">
+        <div class="space-y-4 max-w-2xl">
+          <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-rutgers-red/10 text-rutgers-red dark:bg-rutgers-red/20 text-xs font-semibold tracking-wide uppercase border border-rutgers-red/20">
+            <i data-lucide="graduation-cap" class="w-4 h-4"></i>
+            <span>Rutgers Business School • Finance</span>
+          </div>
+          <h1 class="text-4xl sm:text-5xl font-extrabold tracking-tight">
+            Hi, I'm <span class="text-rutgers-red">Hemal Jindal</span>
+          </h1>
+          
+          <!-- 1-SENTENCE PERSONAL STATEMENT -->
+          <div class="p-4 rounded-xl bg-gradient-to-r from-rutgers-red/5 via-transparent to-transparent border-l-4 border-rutgers-red dark:from-rutgers-red/10">
+            <p class="text-lg sm:text-xl font-medium text-gray-800 dark:text-zinc-200 leading-relaxed italic">
+              "As an ambitious Finance Major at Rutgers Business School, I leverage quantitative rigor, strategic valuation modeling, and cross-disciplinary research to drive high-impact financial analysis and corporate value creation."
+            </p>
+          </div>
+
+          <p class="text-gray-600 dark:text-zinc-400 text-sm sm:text-base leading-relaxed">
+            Passionate about capital markets, equity research, corporate valuation, and regulatory economics. Proven ability to combine detailed financial modeling with clear, persuasive communication.
+          </p>
+
+          <div class="flex flex-wrap gap-3 pt-2">
+            <a href="#projects" class="px-4 py-2.5 bg-rutgers-red hover:bg-rutgers-darkRed text-white font-medium text-sm rounded-lg shadow transition-colors flex items-center space-x-2">
+              <i data-lucide="file-text" class="w-4 h-4"></i>
+              <span>View Projects & Papers</span>
             </a>
-
-            <!-- Desktop Nav Links -->
-            <nav class="hidden md:flex items-center space-x-8 text-sm font-semibold">
-                <a href="#home" class="hover:text-scarlet-600 dark:hover:text-scarlet-500 transition-colors">Home</a>
-                <a href="#about" class="hover:text-scarlet-600 dark:hover:text-scarlet-500 transition-colors">About Me</a>
-                <a href="#rbs" class="hover:text-scarlet-600 dark:hover:text-scarlet-500 transition-colors">Rutgers Spotlight</a>
-            </nav>
-
-            <!-- Action Controls -->
-            <div class="flex items-center space-x-4">
-                <!-- Theme Toggle Button -->
-                <button id="theme-toggle" aria-label="Toggle Light or Dark Mode" class="p-2.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-100 dark:bg-navy-800 text-slate-600 dark:text-slate-300 hover:text-scarlet-600 dark:hover:text-scarlet-500 transition-all focus:outline-none">
-                    <i id="theme-toggle-dark-icon" class="fa-solid fa-moon text-lg hidden"></i>
-                    <i id="theme-toggle-light-icon" class="fa-solid fa-sun text-lg hidden"></i>
-                </button>
-
-                <!-- LinkedIn Connect CTA -->
-                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="hidden sm:inline-flex items-center space-x-2 bg-scarlet-600 hover:bg-scarlet-700 text-white px-4 py-2.5 rounded-xl font-semibold text-sm transition-all shadow-md shadow-scarlet-600/20 active:scale-95">
-                    <i class="fa-brands fa-linkedin"></i>
-                    <span>Connect</span>
-                </a>
-
-                <!-- Mobile Menu Button -->
-                <button id="mobile-menu-btn" aria-label="Open Mobile Navigation Menu" class="md:hidden p-2.5 rounded-xl border border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-300 hover:text-scarlet-600">
-                    <i class="fa-solid fa-bars text-xl"></i>
-                </button>
-            </div>
+            <a href="https://linkedin.com" target="_blank" rel="noopener" class="px-4 py-2.5 bg-gray-100 dark:bg-zinc-800 hover:bg-gray-200 dark:hover:bg-zinc-700 text-gray-800 dark:text-zinc-200 font-medium text-sm rounded-lg transition-colors flex items-center space-x-2 border border-gray-200 dark:border-zinc-700">
+              <i data-lucide="linkedin" class="w-4 h-4"></i>
+              <span>LinkedIn Profile</span>
+            </a>
+          </div>
         </div>
 
-        <!-- Mobile Menu Overlay -->
-        <div id="mobile-menu" class="hidden md:hidden border-b border-slate-200 dark:border-slate-800 bg-white dark:bg-navy-900 px-4 pt-2 pb-6 space-y-3">
-            <a href="#home" class="mobile-link block px-3 py-2 rounded-lg text-base font-medium hover:bg-slate-100 dark:hover:bg-navy-800 hover:text-scarlet-600">Home</a>
-            <a href="#about" class="mobile-link block px-3 py-2 rounded-lg text-base font-medium hover:bg-slate-100 dark:hover:bg-navy-800 hover:text-scarlet-600">About Me</a>
-            <a href="#rbs" class="mobile-link block px-3 py-2 rounded-lg text-base font-medium hover:bg-slate-100 dark:hover:bg-navy-800 hover:text-scarlet-600">Rutgers Spotlight</a>
-        </div>
-    </header>
-
-    <main class="flex-grow">
-        <!-- Hero Section -->
-        <section id="home" class="relative py-20 lg:py-28 overflow-hidden">
-            <!-- Subtle Scarlet Glow Background Effect -->
-            <div class="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[30rem] h-[30rem] bg-scarlet-600/10 dark:bg-scarlet-600/20 rounded-full blur-3xl pointer-events-none"></div>
-
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-                    
-                    <!-- Hero Content -->
-                    <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
-                        <div class="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full border border-scarlet-600/30 bg-scarlet-600/10 text-scarlet-600 dark:text-scarlet-500 text-xs font-bold uppercase tracking-wider">
-                            <span class="w-2 h-2 rounded-full bg-scarlet-600 animate-ping"></span>
-                            <span>Rutgers Business School • B.S. in Finance</span>
-                        </div>
-
-                        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 dark:text-white tracking-tight leading-tight">
-                            Hi, I'm <span class="text-scarlet-600 dark:text-scarlet-500">Hemal Jindal</span>
-                        </h1>
-
-                        <p class="text-xl font-semibold text-slate-600 dark:text-slate-300">
-                            Finance Major @ Rutgers Business School
-                        </p>
-
-                        <p class="text-slate-600 dark:text-slate-400 max-w-2xl text-base leading-relaxed mx-auto lg:mx-0">
-                            Driven by quantitative rigor, valuation models, and market strategy. Passionate about pursuing opportunities in investment banking, corporate finance, and financial analysis.
-                        </p>
-
-                        <!-- Key Focus Badges -->
-                        <div class="pt-2 flex flex-wrap gap-2.5 justify-center lg:justify-start">
-                            <span class="px-3.5 py-1.5 rounded-lg text-xs font-bold bg-slate-200/80 dark:bg-navy-800 text-slate-800 dark:text-slate-200 border border-slate-300 dark:border-slate-700">Financial Modeling</span>
-                            <span class="px-3.5 py-1.5 rounded-lg text-xs font-bold bg-slate-200/80 dark:bg-navy-800 text-slate-800 dark:text-slate-200 border border-slate-300 dark:border-slate-700">Corporate Finance</span>
-                            <span class="px-3.5 py-1.5 rounded-lg text-xs font-bold bg-slate-200/80 dark:bg-navy-800 text-slate-800 dark:text-slate-200 border border-slate-300 dark:border-slate-700">Investment Strategy</span>
-                            <span class="px-3.5 py-1.5 rounded-lg text-xs font-bold bg-slate-200/80 dark:bg-navy-800 text-slate-800 dark:text-slate-200 border border-slate-300 dark:border-slate-700">Valuation Analysis</span>
-                        </div>
-
-                        <!-- Hero CTAs -->
-                        <div class="pt-4 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                            <a href="#about" class="px-6 py-3.5 rounded-xl bg-scarlet-600 hover:bg-scarlet-700 text-white font-bold text-center transition-all shadow-lg shadow-scarlet-600/25 hover:-translate-y-0.5">
-                                Learn About Me
-                            </a>
-                            <a href="#rbs" class="px-6 py-3.5 rounded-xl border border-slate-300 dark:border-slate-700 hover:border-scarlet-600 dark:hover:border-scarlet-500 font-bold text-center transition-all hover:-translate-y-0.5 bg-white/50 dark:bg-navy-900/50">
-                                Rutgers Spotlight
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Hero Visual Card -->
-                    <div class="lg:col-span-5 flex justify-center">
-                        <div class="w-full max-w-md p-6 rounded-2xl bg-white dark:bg-navy-900 border border-slate-200 dark:border-slate-800 shadow-2xl relative overflow-hidden scarlet-glow">
-                            <!-- Header inside Card -->
-                            <div class="flex items-center justify-between pb-6 border-b border-slate-200 dark:border-slate-800">
-                                <div class="flex items-center space-x-3">
-                                    <div class="w-10 h-10 rounded-full bg-scarlet-600 flex items-center justify-center text-white font-extrabold text-lg">
-                                        R
-                                    </div>
-                                    <div>
-                                        <h3 class="font-bold text-slate-900 dark:text-white">Rutgers Business School</h3>
-                                        <p class="text-xs text-slate-500 dark:text-slate-400">Finance Major Profile</p>
-                                    </div>
-                                </div>
-                                <span class="px-2.5 py-1 rounded border border-emerald-500/30 bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 text-xs font-semibold">Active Student</span>
-                            </div>
-
-                            <!-- Highlights inside Card -->
-                            <div class="space-y-4 my-6">
-                                <div class="p-4 rounded-xl bg-slate-50 dark:bg-navy-800/60 border border-slate-100 dark:border-slate-800">
-                                    <p class="text-xs text-slate-500 dark:text-slate-400 font-semibold uppercase tracking-wider">Target Focus</p>
-                                    <p class="text-lg font-extrabold text-slate-900 dark:text-white mt-1">Investment Banking & Corporate Finance</p>
-                                </div>
-
-                                <div class="grid grid-cols-2 gap-3">
-                                    <div class="p-3.5 rounded-xl bg-slate-50 dark:bg-navy-800/60 border border-slate-100 dark:border-slate-800">
-                                        <p class="text-[11px] text-slate-500 font-semibold">Methodology</p>
-                                        <p class="text-sm font-bold text-scarlet-600 dark:text-scarlet-500 mt-0.5">DCF & Multiples</p>
-                                    </div>
-                                    <div class="p-3.5 rounded-xl bg-slate-50 dark:bg-navy-800/60 border border-slate-100 dark:border-slate-800">
-                                        <p class="text-[11px] text-slate-500 font-semibold">Certification</p>
-                                        <p class="text-sm font-bold text-slate-900 dark:text-white mt-0.5">Bloomberg (BMC)</p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Footer note in card -->
-                            <div class="pt-4 border-t border-slate-200 dark:border-slate-800 flex items-center justify-between text-xs text-slate-500">
-                                <span><i class="fa-solid fa-graduation-cap text-scarlet-600 mr-1.5"></i>Rutgers University</span>
-                                <span>New Brunswick, NJ</span>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-
-        <!-- About Me Section -->
-        <section id="about" class="py-20 bg-slate-100/70 dark:bg-navy-900/40 border-y border-slate-200 dark:border-slate-800/60">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center max-w-3xl mx-auto mb-16">
-                    <span class="text-scarlet-600 font-bold text-sm tracking-widest uppercase">Professional Profile</span>
-                    <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white mt-1">About Me</h2>
-                    <p class="text-slate-600 dark:text-slate-400 mt-3 text-base">
-                        Analytical thinker combining core financial theory with hands-on quantitative skills and proactive leadership.
-                    </p>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <!-- Core Analytical Skills -->
-                    <div class="p-8 rounded-2xl bg-white dark:bg-navy-900 border border-slate-200 dark:border-slate-800 shadow-md flex flex-col justify-between hover:border-scarlet-600/50 transition-all">
-                        <div>
-                            <div class="w-12 h-12 rounded-xl bg-scarlet-600/10 text-scarlet-600 flex items-center justify-center text-2xl mb-6">
-                                <i class="fa-solid fa-chart-line"></i>
-                            </div>
-                            <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3">Financial Analytics</h3>
-                            <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
-                                Proficient in evaluating financial statements, constructing valuation models, and performing sensitivity analysis to drive strategic decision-making and uncover market opportunities.
-                            </p>
-                        </div>
-                        <div class="mt-6 pt-4 border-t border-slate-100 dark:border-slate-800/80">
-                            <span class="text-xs text-scarlet-600 font-bold uppercase tracking-wider">Modeling & Valuation</span>
-                        </div>
-                    </div>
-
-                    <!-- Leadership & Collaboration -->
-                    <div class="p-8 rounded-2xl bg-white dark:bg-navy-900 border border-slate-200 dark:border-slate-800 shadow-md flex flex-col justify-between hover:border-scarlet-600/50 transition-all">
-                        <div>
-                            <div class="w-12 h-12 rounded-xl bg-scarlet-600/10 text-scarlet-600 flex items-center justify-center text-2xl mb-6">
-                                <i class="fa-solid fa-users-gear"></i>
-                            </div>
-                            <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3">Leadership & Communication</h3>
-                            <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
-                                Active leader across student organizations and team settings, skilled in articulating complex financial concepts to diverse stakeholders and collaborating effectively under tight deadlines.
-                            </p>
-                        </div>
-                        <div class="mt-6 pt-4 border-t border-slate-100 dark:border-slate-800/80">
-                            <span class="text-xs text-scarlet-600 font-bold uppercase tracking-wider">Teamwork & Strategy</span>
-                        </div>
-                    </div>
-
-                    <!-- Career Ambition -->
-                    <div class="p-8 rounded-2xl bg-white dark:bg-navy-900 border border-slate-200 dark:border-slate-800 shadow-md flex flex-col justify-between hover:border-scarlet-600/50 transition-all">
-                        <div>
-                            <div class="w-12 h-12 rounded-xl bg-scarlet-600/10 text-scarlet-600 flex items-center justify-center text-2xl mb-6">
-                                <i class="fa-solid fa-bullseye"></i>
-                            </div>
-                            <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3">Career Aspirations</h3>
-                            <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
-                                Passionate about launching a career in Investment Banking, Corporate Finance, or Financial Analysis, leveraging high standards of accuracy to contribute immediate value to top-tier financial institutions.
-                            </p>
-                        </div>
-                        <div class="mt-6 pt-4 border-t border-slate-100 dark:border-slate-800/80">
-                            <span class="text-xs text-scarlet-600 font-bold uppercase tracking-wider">Industry Focus</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Rutgers Business School Spotlight Section -->
-        <section id="rbs" class="py-20">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center max-w-3xl mx-auto mb-16">
-                    <span class="text-scarlet-600 font-bold text-sm tracking-widest uppercase">Academic Excellence</span>
-                    <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white mt-1">Rutgers Business School Spotlight</h2>
-                    <p class="text-slate-600 dark:text-slate-400 mt-3 text-base">
-                        Developing strong business fundamentals and quantitative expertise through specialized coursework and student-led investment activities.
-                    </p>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <!-- Degree & Academic Achievements -->
-                    <div class="p-8 rounded-2xl bg-white dark:bg-navy-900 border border-slate-200 dark:border-slate-800 shadow-md flex flex-col justify-between">
-                        <div>
-                            <div class="w-12 h-12 rounded-xl bg-scarlet-600/10 text-scarlet-600 flex items-center justify-center text-2xl mb-6">
-                                <i class="fa-solid fa-graduation-cap"></i>
-                            </div>
-                            <h3 class="text-xl font-bold text-slate-900 dark:text-white">Degree & Achievements</h3>
-                            <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Rutgers University – New Brunswick / Newark</p>
-                            
-                            <ul class="mt-6 space-y-3 text-sm text-slate-600 dark:text-slate-300">
-                                <li class="flex items-start">
-                                    <i class="fa-solid fa-award text-scarlet-600 mr-2.5 mt-1 text-xs"></i>
-                                    <span><strong>Degree:</strong> Bachelor of Science (B.S.)</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <i class="fa-solid fa-award text-scarlet-600 mr-2.5 mt-1 text-xs"></i>
-                                    <span><strong>Major:</strong> Finance</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <i class="fa-solid fa-award text-scarlet-600 mr-2.5 mt-1 text-xs"></i>
-                                    <span><strong>Academic Standing:</strong> Dean's List Honor Roll</span>
-                                </li>
-                                <li class="flex items-start">
-                                    <i class="fa-solid fa-award text-scarlet-600 mr-2.5 mt-1 text-xs"></i>
-                                    <span><strong>Certifications:</strong> Bloomberg Market Concepts (BMC)</span>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="mt-8 pt-4 border-t border-slate-100 dark:border-slate-800">
-                            <span class="text-xs text-slate-500 font-medium">AACSB Accredited Program</span>
-                        </div>
-                    </div>
-
-                    <!-- Core Coursework -->
-                    <div class="p-8 rounded-2xl bg-white dark:bg-navy-900 border border-slate-200 dark:border-slate-800 shadow-md flex flex-col justify-between">
-                        <div>
-                            <div class="w-12 h-12 rounded-xl bg-scarlet-600/10 text-scarlet-600 flex items-center justify-center text-2xl mb-6">
-                                <i class="fa-solid fa-book-bookmark"></i>
-                            </div>
-                            <h3 class="text-xl font-bold text-slate-900 dark:text-white">Specialized Coursework</h3>
-                            <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Rigorous Financial Curriculum</p>
-                            
-                            <div class="mt-6 flex flex-wrap gap-2">
-                                <span class="px-3 py-1.5 text-xs font-semibold rounded-lg bg-slate-100 dark:bg-navy-800 text-slate-800 dark:text-slate-200 border border-slate-200 dark:border-slate-700">Financial Management</span>
-                                <span class="px-3 py-1.5 text-xs font-semibold rounded-lg bg-slate-100 dark:bg-navy-800 text-slate-800 dark:text-slate-200 border border-slate-200 dark:border-slate-700">Investment Analysis</span>
-                                <span class="px-3 py-1.5 text-xs font-semibold rounded-lg bg-slate-100 dark:bg-navy-800 text-slate-800 dark:text-slate-200 border border-slate-200 dark:border-slate-700">Corporate Finance</span>
-                                <span class="px-3 py-1.5 text-xs font-semibold rounded-lg bg-slate-100 dark:bg-navy-800 text-slate-800 dark:text-slate-200 border border-slate-200 dark:border-slate-700">Derivatives</span>
-                                <span class="px-3 py-1.5 text-xs font-semibold rounded-lg bg-slate-100 dark:bg-navy-800 text-slate-800 dark:text-slate-200 border border-slate-200 dark:border-slate-700">Financial Modeling</span>
-                                <span class="px-3 py-1.5 text-xs font-semibold rounded-lg bg-slate-100 dark:bg-navy-800 text-slate-800 dark:text-slate-200 border border-slate-200 dark:border-slate-700">Business Valuation</span>
-                            </div>
-                        </div>
-                        <div class="mt-8 pt-4 border-t border-slate-100 dark:border-slate-800">
-                            <span class="text-xs text-slate-500 font-medium">Quantitative & Analytical Focus</span>
-                        </div>
-                    </div>
-
-                    <!-- Campus Involvement & Clubs -->
-                    <div class="p-8 rounded-2xl bg-white dark:bg-navy-900 border border-slate-200 dark:border-slate-800 shadow-md flex flex-col justify-between">
-                        <div>
-                            <div class="w-12 h-12 rounded-xl bg-scarlet-600/10 text-scarlet-600 flex items-center justify-center text-2xl mb-6">
-                                <i class="fa-solid fa-users"></i>
-                            </div>
-                            <h3 class="text-xl font-bold text-slate-900 dark:text-white">Campus Involvement</h3>
-                            <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Student Clubs & Organization Leadership</p>
-                            
-                            <ul class="mt-6 space-y-4 text-sm text-slate-600 dark:text-slate-300">
-                                <li class="space-y-1">
-                                    <p class="font-bold text-slate-900 dark:text-white flex items-center">
-                                        <i class="fa-solid fa-circle-dot text-scarlet-600 text-[10px] mr-2"></i>
-                                        Rutgers Student Investment Fund
-                                    </p>
-                                    <p class="text-xs text-slate-500 pl-4">Active Equity Research & Portfolio Management</p>
-                                </li>
-                                <li class="space-y-1">
-                                    <p class="font-bold text-slate-900 dark:text-white flex items-center">
-                                        <i class="fa-solid fa-circle-dot text-scarlet-600 text-[10px] mr-2"></i>
-                                        Rutgers Finance Society
-                                    </p>
-                                    <p class="text-xs text-slate-500 pl-4">Networking, Financial Workshops & Market Pitching</p>
-                                </li>
-                                <li class="space-y-1">
-                                    <p class="font-bold text-slate-900 dark:text-white flex items-center">
-                                        <i class="fa-solid fa-circle-dot text-scarlet-600 text-[10px] mr-2"></i>
-                                        Rutgers Business School Clubs
-                                    </p>
-                                    <p class="text-xs text-slate-500 pl-4">Active participant in business speaker series</p>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="mt-8 pt-4 border-t border-slate-100 dark:border-slate-800">
-                            <span class="text-xs text-slate-500 font-medium">Extracurricular Finance Engagement</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- Clean, Minimal Footer directly below RBS Spotlight -->
-    <footer class="bg-white dark:bg-navy-950 border-t border-slate-200 dark:border-slate-800 py-6">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 space-y-3 sm:space-y-0">
+        <!-- PROFILE CARD -->
+        <div class="w-full md:w-80 glass-card rounded-2xl p-6 text-center space-y-4 shadow-xl border border-gray-200 dark:border-zinc-800 relative overflow-hidden">
+          <div class="absolute -top-12 -right-12 w-32 h-32 bg-rutgers-red/10 rounded-full blur-2xl"></div>
+          <div class="w-24 h-24 mx-auto rounded-full bg-zinc-200 dark:bg-zinc-800 flex items-center justify-center text-rutgers-red font-bold text-3xl border-2 border-rutgers-red shadow-inner">
+            HJ
+          </div>
+          <div>
+            <h2 class="text-xl font-bold">Hemal Jindal</h2>
+            <p class="text-xs text-gray-500 dark:text-zinc-400">Finance Major • B.S. Candidate</p>
+          </div>
+          <div class="pt-2 border-t border-gray-200 dark:border-zinc-800 text-left space-y-2 text-xs text-gray-600 dark:text-zinc-400">
             <div class="flex items-center space-x-2">
-                <div class="w-6 h-6 rounded bg-scarlet-600 text-white font-bold flex items-center justify-center text-[10px]">HJ</div>
-                <span class="font-medium">Hemal Jindal • Rutgers Business School Finance Major</span>
+              <i data-lucide="building-2" class="w-4 h-4 text-rutgers-red"></i>
+              <span>Rutgers Business School</span>
             </div>
-            <div class="flex items-center space-x-6">
-                <a href="#home" class="hover:text-scarlet-600 transition-colors">Back to Top</a>
-                <a href="mailto:hemal.jindal@rutgers.edu" class="hover:text-scarlet-600 transition-colors">Contact Email</a>
+            <div class="flex items-center space-x-2">
+              <i data-lucide="map-pin" class="w-4 h-4 text-rutgers-red"></i>
+              <span>New Brunswick, NJ</span>
             </div>
+            <div class="flex items-center space-x-2">
+              <i data-lucide="mail" class="w-4 h-4 text-rutgers-red"></i>
+              <span>hemal.jindal@rutgers.edu</span>
+            </div>
+          </div>
         </div>
-    </footer>
+      </div>
+    </section>
 
-    <!-- Interactive Script -->
-    <script>
-        // Dark/Light Theme Switcher Logic
-        const themeToggleBtn = document.getElementById('theme-toggle');
-        const darkIcon = document.getElementById('theme-toggle-dark-icon');
-        const lightIcon = document.getElementById('theme-toggle-light-icon');
+    <!-- TECHNICAL & BEHAVIORAL SKILLS SECTION -->
+    <section id="skills" class="space-y-6">
+      <div class="border-b border-gray-200 dark:border-zinc-800 pb-3 flex items-center space-x-3">
+        <div class="p-2 rounded-lg bg-rutgers-red/10 text-rutgers-red">
+          <i data-lucide="award" class="w-6 h-6"></i>
+        </div>
+        <div>
+          <h2 class="text-2xl font-bold">Core Competencies & Skills</h2>
+          <p class="text-xs text-gray-500 dark:text-zinc-400">A balanced framework combining quantitative precision with strategic agility</p>
+        </div>
+      </div>
 
-        function initTheme() {
-            if (localStorage.getItem('color-theme') === 'light' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: light)').matches)) {
-                document.documentElement.classList.remove('dark');
-                lightIcon.classList.remove('hidden');
-            } else {
-                document.documentElement.classList.add('dark');
-                darkIcon.classList.remove('hidden');
-            }
-        }
-        initTheme();
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- Technical Skills -->
+        <div class="glass-card rounded-2xl p-6 space-y-4 shadow-sm">
+          <div class="flex items-center space-x-2 text-rutgers-red font-semibold text-lg border-b border-gray-100 dark:border-zinc-800 pb-2">
+            <i data-lucide="code-2" class="w-5 h-5"></i>
+            <span>Technical & Financial Skills</span>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-1.5 rounded-lg bg-gray-100 dark:bg-zinc-800 text-xs font-semibold text-gray-800 dark:text-zinc-200 border border-gray-200 dark:border-zinc-700 flex items-center space-x-1.5">
+              <i data-lucide="trending-up" class="w-3.5 h-3.5 text-rutgers-red"></i>
+              <span>Discounted Cash Flow (DCF) Valuation</span>
+            </span>
+            <span class="px-3 py-1.5 rounded-lg bg-gray-100 dark:bg-zinc-800 text-xs font-semibold text-gray-800 dark:text-zinc-200 border border-gray-200 dark:border-zinc-700 flex items-center space-x-1.5">
+              <i data-lucide="bar-chart-3" class="w-3.5 h-3.5 text-rutgers-red"></i>
+              <span>Equity Research & Pitching</span>
+            </span>
+            <span class="px-3 py-1.5 rounded-lg bg-gray-100 dark:bg-zinc-800 text-xs font-semibold text-gray-800 dark:text-zinc-200 border border-gray-200 dark:border-zinc-700 flex items-center space-x-1.5">
+              <i data-lucide="pie-chart" class="w-3.5 h-3.5 text-rutgers-red"></i>
+              <span>Financial Statement Analysis</span>
+            </span>
+            <span class="px-3 py-1.5 rounded-lg bg-gray-100 dark:bg-zinc-800 text-xs font-semibold text-gray-800 dark:text-zinc-200 border border-gray-200 dark:border-zinc-700 flex items-center space-x-1.5">
+              <i data-lucide="calculator" class="w-3.5 h-3.5 text-rutgers-red"></i>
+              <span>WACC & Cost of Capital Modeling</span>
+            </span>
+            <span class="px-3 py-1.5 rounded-lg bg-gray-100 dark:bg-zinc-800 text-xs font-semibold text-gray-800 dark:text-zinc-200 border border-gray-200 dark:border-zinc-700 flex items-center space-x-1.5">
+              <i data-lucide="table" class="w-3.5 h-3.5 text-rutgers-red"></i>
+              <span>Advanced Excel & Financial Forecasting</span>
+            </span>
+            <span class="px-3 py-1.5 rounded-lg bg-gray-100 dark:bg-zinc-800 text-xs font-semibold text-gray-800 dark:text-zinc-200 border border-gray-200 dark:border-zinc-700 flex items-center space-x-1.5">
+              <i data-lucide="layers" class="w-3.5 h-3.5 text-rutgers-red"></i>
+              <span>Comparable Company Analysis (Comps)</span>
+            </span>
+            <span class="px-3 py-1.5 rounded-lg bg-gray-100 dark:bg-zinc-800 text-xs font-semibold text-gray-800 dark:text-zinc-200 border border-gray-200 dark:border-zinc-700 flex items-center space-x-1.5">
+              <i data-lucide="shield-alert" class="w-3.5 h-3.5 text-rutgers-red"></i>
+              <span>Portfolio Risk Assessment</span>
+            </span>
+            <span class="px-3 py-1.5 rounded-lg bg-gray-100 dark:bg-zinc-800 text-xs font-semibold text-gray-800 dark:text-zinc-200 border border-gray-200 dark:border-zinc-700 flex items-center space-x-1.5">
+              <i data-lucide="dollar-sign" class="w-3.5 h-3.5 text-rutgers-red"></i>
+              <span>Derivatives & Options Fundamentals</span>
+            </span>
+          </div>
+        </div>
 
-        themeToggleBtn.addEventListener('click', function() {
-            darkIcon.classList.toggle('hidden');
-            lightIcon.classList.toggle('hidden');
+        <!-- Behavioral Skills -->
+        <div class="glass-card rounded-2xl p-6 space-y-4 shadow-sm">
+          <div class="flex items-center space-x-2 text-rutgers-red font-semibold text-lg border-b border-gray-100 dark:border-zinc-800 pb-2">
+            <i data-lucide="users" class="w-5 h-5"></i>
+            <span>Behavioral & Professional Skills</span>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-1.5 rounded-lg bg-gray-100 dark:bg-zinc-800 text-xs font-semibold text-gray-800 dark:text-zinc-200 border border-gray-200 dark:border-zinc-700 flex items-center space-x-1.5">
+              <i data-lucide="brain" class="w-3.5 h-3.5 text-rutgers-red"></i>
+              <span>Strategic Analytical Thinking</span>
+            </span>
+            <span class="px-3 py-1.5 rounded-lg bg-gray-100 dark:bg-zinc-800 text-xs font-semibold text-gray-800 dark:text-zinc-200 border border-gray-200 dark:border-zinc-700 flex items-center space-x-1.5">
+              <i data-lucide="mic" class="w-3.5 h-3.5 text-rutgers-red"></i>
+              <span>Stock Pitch Presentation & Public Speaking</span>
+            </span>
+            <span class="px-3 py-1.5 rounded-lg bg-gray-100 dark:bg-zinc-800 text-xs font-semibold text-gray-800 dark:text-zinc-200 border border-gray-200 dark:border-zinc-700 flex items-center space-x-1.5">
+              <i data-lucide="scale" class="w-3.5 h-3.5 text-rutgers-red"></i>
+              <span>Bio/Economic Ethics & Policy Analysis</span>
+            </span>
+            <span class="px-3 py-1.5 rounded-lg bg-gray-100 dark:bg-zinc-800 text-xs font-semibold text-gray-800 dark:text-zinc-200 border border-gray-200 dark:border-zinc-700 flex items-center space-x-1.5">
+              <i data-lucide="users-2" class="w-3.5 h-3.5 text-rutgers-red"></i>
+              <span>Cross-Functional Team Leadership</span>
+            </span>
+            <span class="px-3 py-1.5 rounded-lg bg-gray-100 dark:bg-zinc-800 text-xs font-semibold text-gray-800 dark:text-zinc-200 border border-gray-200 dark:border-zinc-700 flex items-center space-x-1.5">
+              <i data-lucide="target" class="w-3.5 h-3.5 text-rutgers-red"></i>
+              <span>Problem Solving & Adaptability</span>
+            </span>
+            <span class="px-3 py-1.5 rounded-lg bg-gray-100 dark:bg-zinc-800 text-xs font-semibold text-gray-800 dark:text-zinc-200 border border-gray-200 dark:border-zinc-700 flex items-center space-x-1.5">
+              <i data-lucide="message-square" class="w-3.5 h-3.5 text-rutgers-red"></i>
+              <span>Executive Stakeholder Communication</span>
+            </span>
+          </div>
+        </div>
+      </div>
+    </section>
 
-            if (document.documentElement.classList.contains('dark')) {
-                document.documentElement.classList.remove('dark');
-                localStorage.setItem('color-theme', 'light');
-            } else {
-                document.documentElement.classList.add('dark');
-                localStorage.setItem('color-theme', 'dark');
-            }
-        });
+    <!-- RUTGERS BUSINESS SCHOOL SPOTLIGHT -->
+    <section id="rbs" class="space-y-6">
+      <div class="border-b border-gray-200 dark:border-zinc-800 pb-3 flex items-center space-x-3">
+        <div class="p-2 rounded-lg bg-rutgers-red/10 text-rutgers-red">
+          <i data-lucide="building" class="w-6 h-6"></i>
+        </div>
+        <div>
+          <h2 class="text-2xl font-bold">Rutgers Business School Spotlight</h2>
+          <p class="text-xs text-gray-500 dark:text-zinc-400">Academic excellence and campus involvement in New Brunswick & Newark</p>
+        </div>
+      </div>
 
-        // Mobile Menu Toggle
-        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
+      <div class="glass-card rounded-2xl p-6 sm:p-8 space-y-6 border border-gray-200 dark:border-zinc-800">
+        <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+          <div>
+            <h3 class="text-xl font-bold text-rutgers-red">Bachelor of Science in Finance</h3>
+            <p class="text-sm font-medium text-gray-600 dark:text-zinc-400">Rutgers University – New Brunswick / Newark</p>
+          </div>
+          <span class="px-3 py-1 rounded-full bg-zinc-100 dark:bg-zinc-800 text-xs font-mono font-semibold text-gray-700 dark:text-zinc-300 border border-gray-200 dark:border-zinc-700">
+            Expected Graduation: May 2027
+          </span>
+        </div>
 
-        mobileMenuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 pt-2">
+          <div class="p-4 rounded-xl bg-gray-50 dark:bg-zinc-900/50 border border-gray-200 dark:border-zinc-800">
+            <div class="flex items-center space-x-2 text-rutgers-red font-semibold text-sm mb-1">
+              <i data-lucide="book-open" class="w-4 h-4"></i>
+              <span>Core Coursework</span>
+            </div>
+            <p class="text-xs text-gray-600 dark:text-zinc-400 leading-relaxed">
+              Financial Management, Investment Analysis, Corporate Finance, Derivatives, Financial Modeling, Business Valuation, Micro/Macroeconomics, Accounting.
+            </p>
+          </div>
 
-        document.querySelectorAll('.mobile-link').forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.add('hidden');
-            });
-        });
-    </script>
+          <div class="p-4 rounded-xl bg-gray-50 dark:bg-zinc-900/50 border border-gray-200 dark:border-zinc-800">
+            <div class="flex items-center space-x-2 text-rutgers-red font-semibold text-sm mb-1">
+              <i data-lucide="trophy" class="w-4 h-4"></i>
+              <span>Involvement</span>
+            </div>
+            <p class="text-xs text-gray-600 dark:text-zinc-400 leading-relaxed">
+              Rutgers Student Investment Fund (RSIF), Financial Management Association (FMA), Rutgers Finance Society (RFS).
+            </p>
+          </div>
+
+          <div class="p-4 rounded-xl bg-gray-50 dark:bg-zinc-900/50 border border-gray-200 dark:border-zinc-800">
+            <div class="flex items-center space-x-2 text-rutgers-red font-semibold text-sm mb-1">
+              <i data-lucide="target" class="w-4 h-4"></i>
+              <span>Focus Areas</span>
+            </div>
+            <p class="text-xs text-gray-600 dark:text-zinc-400 leading-relaxed">
+              Investment Banking, Valuation Analysis, Equity Research, Corporate Strategy, Capital Markets, Bio/Economic Ethics.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- RELEVANT PROJECTS & PAPERS -->
+    <section id="projects" class="space-y-6">
+      <div class="border-b border-gray-200 dark:border-zinc-800 pb-3 flex items-center space-x-3">
+        <div class="p-2 rounded-lg bg-rutgers-red/10 text-rutgers-red">
+          <i data-lucide="folder-git-2" class="w-6 h-6"></i>
+        </div>
+        <div>
+          <h2 class="text-2xl font-bold">Featured Projects & Research Papers</h2>
+          <p class="text-xs text-gray-500 dark:text-zinc-400">Equity pitch presentations, valuation models, and bio/economic policy papers</p>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+        <!-- PROJECT 1: ASML STOCK PITCH -->
+        <div class="glass-card rounded-2xl p-6 flex flex-col justify-between space-y-4 shadow-sm hover:shadow-md transition-shadow border border-gray-200 dark:border-zinc-800 relative">
+          <div class="space-y-3">
+            <div class="flex items-center justify-between">
+              <span class="px-2.5 py-1 rounded-md bg-green-500/10 text-green-600 dark:text-green-400 font-mono text-xs font-bold border border-green-500/20">
+                BUY RECOMMENDATION • TARGET $1,076.33
+              </span>
+              <span class="text-xs text-gray-400 font-mono">Equity Research</span>
+            </div>
+            
+            <h3 class="text-xl font-bold tracking-tight">
+              ASML Holding N.V. Industry & Stock Analysis
+            </h3>
+            
+            <p class="text-xs text-gray-600 dark:text-zinc-400 leading-relaxed">
+              Condensed equity research pitch evaluating ASML's global EUV lithography monopoly, High-NA technology moat, €4.3B R&D commitment, and 11.6% CAGR AI server driver. Includes complete income statement forecast & comparable company analysis.
+            </p>
+
+            <div class="flex flex-wrap gap-1.5 pt-1">
+              <span class="px-2 py-0.5 rounded bg-gray-100 dark:bg-zinc-800 text-[11px] font-mono text-gray-600 dark:text-zinc-300">EUV Monopoly</span>
+              <span class="px-2 py-0.5 rounded bg-gray-100 dark:bg-zinc-800 text-[11px] font-mono text-gray-600 dark:text-zinc-300">DCF & Comps</span>
+              <span class="px-2 py-0.5 rounded bg-gray-100 dark:bg-zinc-800 text-[11px] font-mono text-gray-600 dark:text-zinc-300">Semiconductors</span>
+            </div>
+          </div>
+
+          <div class="pt-4 border-t border-gray-100 dark:border-zinc-800 flex items-center justify-between">
+            <span class="text-xs text-gray-500">Lead Analyst: Hemal Jindal</span>
+            <a href="ASML Industry Analysis - Condensed.pdf" target="_blank" rel="noopener" class="px-3 py-1.5 text-xs font-semibold text-white bg-rutgers-red hover:bg-rutgers-darkRed rounded-lg transition-colors flex items-center space-x-1.5 shadow-sm">
+              <i data-lucide="file-text" class="w-3.5 h-3.5"></i>
+              <span>View PDF Report</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- PROJECT 2: GENE EDITING RESEARCH PAPER -->
+        <div class="glass-card rounded-2xl p-6 flex flex-col justify-between space-y-4 shadow-sm hover:shadow-md transition-shadow border border-gray-200 dark:border-zinc-800 relative">
+          <div class="space-y-3">
+            <div class="flex items-center justify-between">
+              <span class="px-2.5 py-1 rounded-md bg-blue-500/10 text-blue-600 dark:text-blue-400 font-mono text-xs font-bold border border-blue-500/20">
+                RESEARCH PAPER • BIO & ECONOMIC ETHICS
+              </span>
+              <span class="text-xs text-gray-400 font-mono">Academic Research</span>
+            </div>
+
+            <h3 class="text-xl font-bold tracking-tight">
+              Public Interest, Private Profit: Regulating Germline Gene Editing
+            </h3>
+
+            <p class="text-xs text-gray-600 dark:text-zinc-400 leading-relaxed">
+              Analytical thesis examining the structural conflict between publicly-funded biotechnology research and private proprietary enclosure ("catallactic bias"). Evaluates Bayh-Dole march-in rights failures and proposes a "Genomic Solidarity" public governance model.
+            </p>
+
+            <div class="flex flex-wrap gap-1.5 pt-1">
+              <span class="px-2 py-0.5 rounded bg-gray-100 dark:bg-zinc-800 text-[11px] font-mono text-gray-600 dark:text-zinc-300">CRISPR/Cas9</span>
+              <span class="px-2 py-0.5 rounded bg-gray-100 dark:bg-zinc-800 text-[11px] font-mono text-gray-600 dark:text-zinc-300">Economic Policy</span>
+              <span class="px-2 py-0.5 rounded bg-gray-100 dark:bg-zinc-800 text-[11px] font-mono text-gray-600 dark:text-zinc-300">Genomic Solidarity</span>
+            </div>
+          </div>
+
+          <div class="pt-4 border-t border-gray-100 dark:border-zinc-800 flex items-center justify-between">
+            <span class="text-xs text-gray-500">Author: Hemal Jindal</span>
+            <a href="Public Interest, Private Profit, Hemal Jindal.pdf" target="_blank" rel="noopener" class="px-3 py-1.5 text-xs font-semibold text-white bg-rutgers-red hover:bg-rutgers-darkRed rounded-lg transition-colors flex items-center space-x-1.5 shadow-sm">
+              <i data-lucide="file-text" class="w-3.5 h-3.5"></i>
+              <span>View Full Paper PDF</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="mt-12 border-t border-gray-200 dark:border-zinc-800 bg-white/50 dark:bg-zinc-950/50 py-8">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div class="flex items-center space-x-3">
+        <div class="w-7 h-7 rounded-md bg-rutgers-red text-white font-bold text-xs flex items-center justify-center">
+          HJ
+        </div>
+        <span class="text-xs font-semibold text-gray-600 dark:text-zinc-400">
+          Hemal Jindal • Rutgers Business School Finance Major
+        </span>
+      </div>
+
+      <div class="text-xs text-gray-500 dark:text-zinc-500">
+        © <span id="year"></span> Hemal Jindal. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Initialize icons
+    lucide.createIcons();
+
+    // Set Dynamic Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Dark/Light Theme Toggle
+    const themeToggleBtn = document.getElementById('themeToggle');
+    
+    // Check saved theme or system preference
+    if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+
+    themeToggleBtn.addEventListener('click', function() {
+      if (document.documentElement.classList.contains('dark')) {
+        document.documentElement.classList.remove('dark');
+        localStorage.setItem('color-theme', 'light');
+      } else {
+        document.documentElement.classList.add('dark');
+        localStorage.setItem('color-theme', 'dark');
+      }
+    });
+  </script>
 </body>
 </html>
